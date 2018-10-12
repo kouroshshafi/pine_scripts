@@ -1,0 +1,6 @@
+//@version=3
+
+study(title="Volume/Price Alert", overlay = true)
+results = (change(volume)>0) and ( close - open < 0) and (close[1] - open[1] >0)
+plotshape(results, style=shape.xcross, color=black)
+alertcondition(results, "Volume/Price Alert", "Volume+Price Alert")
